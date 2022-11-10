@@ -34,7 +34,7 @@
     'demo': [
         'demo/demo.xml',
     ],
-    'images': ['static/description/constancia.gif'],
+    'images': ['static/description/constancia.gif', 'static/description/icon.png', 'static/description/constancia.png'],
     'installable': True,
     'application': True,
     'auto_install': False,
