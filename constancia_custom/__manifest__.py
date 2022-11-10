@@ -10,6 +10,8 @@
     """,
 
     'author': "Marxim TI & SD",
+    'price': '30.00',
+    'currency': 'USD',
     'website': "http://marxim.net",
 
     # Categories can be used to filter modules in modules listing
