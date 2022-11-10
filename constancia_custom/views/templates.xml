@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+      <!-- Se añade el QR al reporte modern, asi como el titulo y subtitulo custom -->
+      <template id="certificate" name="certification_report_view_modern" inherit_id="survey.certification_report_view_modern">
+        <xpath expr="//div[@class='certification']" position="after">
+          <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&#47;constancias&#47;verify?access_token&#61;%s&amp;width=%s&amp;heigth=%s' % ('QR', user_input.env['ir.config_parameter'].sudo().get_param('web.base.url'), user_input.access_token, 100, 100)" style="position: absolute; left: 5%; top: 5%"/>
+        </xpath>
+        <xpath expr="//div[@class='certification-top']" position="replace">
+          <div class="certification-top">
+            <h1><b><t t-esc="user_input.survey_id.head_text"/></b>
+                <br/><span t-if="user_input.scoring_success"><t t-esc="user_input.survey_id.subhead_text"/></span>
+            </h1>
+          </div>
+        </xpath>
+      </template>
+
+      <!-- Front de verificacion -->
+      <template id="verificar_ok" name="verificar_ok">
+      <t t-call="website.layout">
+        <div class="container table-responsive-sm">
+          <table class="table">
+            <tr>
+              <th>Cliente</th>
+              <th>
+                <t t-esc="constancia.partner_id.name" />
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <b>Curso relacionado</b>
+              </td>
+              <td>
+                <t t-esc="constancia.survey_id.title" />
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td>
+                <b>Fecha de expedicion</b>
+              </td>
+              <td>
+                <t t-esc="constancia.create_date" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Folio</b>
+              </td>
+              <td>
+                <t t-esc="constancia.id" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Token</b>
+              </td>
+              <td>
+                <t t-esc="constancia.access_token" />
+              </td>
+            </tr>
+
+            
+          </table>
+          <!-- <a class="btn btn-primary btn-block" t-att-href="'/constancias/print?id&#61;%s&amp;access_token&#61;%s' % (constancia.id, constancia.access_token)" id="print" title="Reimpresion" target="_blank"><i class="fa fa-send"/> Reimpresion</a> -->
+          <br/>
+        </div>
+      </t>
+    </template>
+    </data>
+</odoo>

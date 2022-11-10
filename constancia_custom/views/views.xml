@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+    <record id="survey_survey_form" model="ir.ui.view">
+      <field name="name">survey.survey.form</field>
+      <field name="model">survey.survey</field>
+      <field name="inherit_id" ref="survey.survey_form" />
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='user_id']" position="after">
+          <field name="head_text"/>
+          <field name="subhead_text"/>
+          <!-- <field name="signature"/> -->
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
