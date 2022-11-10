@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Certificado eLearning Custom",
+    'name': "Certificate eLearning Custom",
 
     'summary': """
         Añade la funcionalidad para personalizar la firma de la constancia, ademas añade codigo QR con enlace de validacion de la expedicion de la misma""",
