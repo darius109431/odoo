@@ -19,7 +19,7 @@
     # for the full list
     'category': 'Website/Website',
     'version': '15.0.2',
-    'licence': 'LGPL-3',
+    'license': 'OEEL-1',
 
     # any module necessary for this one to work correctly
     'depends': ['website_slides','survey','website_slides_survey'],
