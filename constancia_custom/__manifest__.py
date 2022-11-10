@@ -34,7 +34,7 @@
     'demo': [
         'demo/demo.xml',
     ],
-    'images': ['static/description/contancia.gif', 'static/description/icon.png', 'static/description/contancia.png'],
+    'images': ['static/description/icon.png'],
     'installable': True,
     'application': True,
     'auto_install': False,
